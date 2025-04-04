@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Minimal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#121212',
+                        light: '#E0E0E0',
+                        accent: '#BB86FC',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+        .animate-fadeInUp-delay {
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light font-sans overflow-x-hidden relative">
+    <video class="fixed top-0 left-0 w-full h-full object-cover -z-10" autoplay muted loop playsinline>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="fixed top-0 left-0 w-full h-full bg-dark/70 -z-10"></div>
+
+    <header class="fixed top-0 w-full z-50 py-8 border-b border-accent/10 backdrop-blur-md bg-dark/80">
+        <div class="container mx-auto px-5 max-w-6xl">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <a href="index.html" class="text-2xl font-semibold text-accent tracking-tight hover:-translate-y-0.5 hover:text-shadow-lg hover:text-shadow-accent/50 transition-all duration-300">Minimal</a>
+                <nav class="mt-5 md:mt-0 flex flex-col md:flex-row gap-8">
+                    <a href="index.html" class="text-light font-light relative group">
+                        Startseite
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-light font-light relative group">
+                        Über uns
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-accent font-light relative group">
+                        Kontakt
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent"></span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex flex-col justify-center items-center px-5 pt-32 relative z-10">
+        <div class="container mx-auto max-w-4xl">
+            <div class="space-y-12">
+                <div class="text-center animate-fadeInUp">
+                    <h1 class="text-5xl md:text-6xl font-semibold text-accent tracking-tight mb-6 text-shadow-lg text-shadow-black/30">
+                        🫂 Kontakt
+                    </h1>
+                    <p class="text-xl text-light/90 text-shadow text-shadow-black/30">
+                        Lass uns in Verbindung bleiben.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-dark/50 backdrop-blur-sm p-8 rounded-lg border border-accent/10 animate-fadeInUp">
+                        <h3 class="text-xl font-semibold text-accent mb-6">🫂 Kontaktinfos</h3>
+                        <ul class="space-y-4 text-light/80">
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">📧</span>
+                                <span>E-Mail: [dein.email@beispiel.de]</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">💼</span>
+                                <span>LinkedIn: [LinkedIn-Profil-Link]</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">🐦</span>
+                                <span>Twitter: [Twitter-Profil-Link]</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">📸</span>
+                                <span>Instagram: [Instagram-Profil-Link]</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-accent">📍</span>
+                                <span>Standort: Deine Stadt, Dein Land</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-dark/50 backdrop-blur-sm p-8 rounded-lg border border-accent/10 animate-fadeInUp">
+                        <h3 class="text-xl font-semibold text-accent mb-6">💬 Kontaktformular</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-light mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 bg-dark/50 border border-accent/20 rounded-lg focus:outline-none focus:border-accent transition-colors duration-300" placeholder="Dein Name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-light mb-2">E-Mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 bg-dark/50 border border-accent/20 rounded-lg focus:outline-none focus:border-accent transition-colors duration-300" placeholder="deine@email.de">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-light mb-2">Nachricht</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 bg-dark/50 border border-accent/20 rounded-lg focus:outline-none focus:border-accent transition-colors duration-300" placeholder="Deine Nachricht"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 px-6 bg-accent/10 hover:bg-accent/20 text-accent rounded-lg transition-all duration-300 hover:-translate-y-0.5">
+                                Absenden
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center border-t border-accent/10 bg-dark/80 relative z-10">
+        <div class="container mx-auto px-5 max-w-6xl">
+            <div class="flex flex-col gap-5">
+                <div class="flex flex-col md:flex-row justify-center gap-5">
+                    <a href="#" class="text-light font-light px-5 py-2.5 rounded-full bg-accent/10 backdrop-blur-sm hover:bg-accent/20 hover:text-accent hover:-translate-y-0.5 transition-all duration-300">
+                        Twitter
+                    </a>
+                    <a href="#" class="text-light font-light px-5 py-2.5 rounded-full bg-accent/10 backdrop-blur-sm hover:bg-accent/20 hover:text-accent hover:-translate-y-0.5 transition-all duration-300">
+                        Instagram
+                    </a>
+                    <a href="#" class="text-light font-light px-5 py-2.5 rounded-full bg-accent/10 backdrop-blur-sm hover:bg-accent/20 hover:text-accent hover:-translate-y-0.5 transition-all duration-300">
+                        LinkedIn
+                    </a>
+                </div>
+                <div class="text-center mt-4">
+                    <p class="text-sm opacity-75">© 2024 Minimal Dark Template. Alle Rechte vorbehalten.</p>
+                    <p class="text-xs opacity-50 mt-2">Template erstellt von talibalhuda</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

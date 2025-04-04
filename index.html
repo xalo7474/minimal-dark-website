@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimale Dunkle Seite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#121212',
+                        light: '#E0E0E0',
+                        accent: '#BB86FC',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+        .animate-fadeInUp-delay {
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light font-sans overflow-x-hidden relative">
+    <video class="fixed top-0 left-0 w-full h-full object-cover -z-10" autoplay muted loop playsinline>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <div class="fixed top-0 left-0 w-full h-full bg-dark/70 -z-10"></div>
+
+    <header class="fixed top-0 w-full z-50 py-8 border-b border-accent/10 backdrop-blur-md bg-dark/80">
+        <div class="container mx-auto px-5 max-w-6xl">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <a href="index.html" class="text-2xl font-semibold text-accent tracking-tight hover:-translate-y-0.5 hover:text-shadow-lg hover:text-shadow-accent/50 transition-all duration-300">Minimal</a>
+                <nav class="mt-5 md:mt-0 flex flex-col md:flex-row gap-8">
+                    <a href="index.html" class="text-accent font-light relative group">
+                        Startseite
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent"></span>
+                    </a>
+                    <a href="about.html" class="text-light font-light relative group">
+                        Über uns
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-light font-light relative group">
+                        Kontakt
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex flex-col justify-center items-center text-center px-5 pt-32 relative z-10">
+        <div class="container mx-auto max-w-6xl">
+            <h1 class="text-5xl md:text-6xl font-semibold text-accent tracking-tight mb-8 animate-fadeInUp text-shadow-lg text-shadow-black/30">
+                Willkommen
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-light/90 animate-fadeInUp-delay text-shadow text-shadow-black/30">
+                Dies ist eine minimalistische dunkle Seite, die mit Liebe zum Detail gestaltet wurde. Einfachheit und Eleganz stehen hier im Vordergrund.
+            </p>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center border-t border-accent/10 bg-dark/80 relative z-10">
+        <div class="container mx-auto px-5 max-w-6xl">
+            <div class="flex flex-col gap-5">
+                <div class="flex flex-col md:flex-row justify-center gap-5">
+                    <a href="#" class="text-light font-light px-5 py-2.5 rounded-full bg-accent/10 backdrop-blur-sm hover:bg-accent/20 hover:text-accent hover:-translate-y-0.5 transition-all duration-300">
+                        Twitter
+                    </a>
+                    <a href="#" class="text-light font-light px-5 py-2.5 rounded-full bg-accent/10 backdrop-blur-sm hover:bg-accent/20 hover:text-accent hover:-translate-y-0.5 transition-all duration-300">
+                        Instagram
+                    </a>
+                    <a href="#" class="text-light font-light px-5 py-2.5 rounded-full bg-accent/10 backdrop-blur-sm hover:bg-accent/20 hover:text-accent hover:-translate-y-0.5 transition-all duration-300">
+                        LinkedIn
+                    </a>
+                </div>
+                <div class="text-center mt-4">
+                    <p class="text-sm opacity-75">© 2024 Minimal Dark Template. Alle Rechte vorbehalten.</p>
+                    <p class="text-xs opacity-50 mt-2">Template erstellt von talibalhuda</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
