@@ -23,6 +23,17 @@
                 }
             }
         }
+
+        // Check if video exists and handle fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('video source');
+            const iframe = document.querySelector('iframe');
+            
+            video.addEventListener('error', function() {
+                // If video fails to load, show the iframe
+                iframe.classList.remove('hidden');
+            });
+        });
     </script>
     <style>
         @keyframes fadeInUp {
@@ -48,6 +59,7 @@
         <source src="background.mp4" type="video/mp4">
     </video>
     <div class="fixed top-0 left-0 w-full h-full bg-dark/70 -z-10"></div>
+    <iframe src="https://streamable.com/e/7efnos" width="100%" height="100%" frameborder="0" allowfullscreen style="width:100%;height:100%;position:fixed;left:0px;top:0px;overflow:hidden;z-index:-20;" class="hidden"></iframe>
 
     <header class="fixed top-0 w-full z-50 py-8 border-b border-accent/10 backdrop-blur-md bg-dark/80">
         <div class="container mx-auto px-5 max-w-6xl">
@@ -103,7 +115,7 @@
                     </div>
 
                     <div class="bg-dark/50 backdrop-blur-sm p-8 rounded-lg border border-accent/10 animate-fadeInUp">
-                        <h3 class="text-xl font-semibold text-accent mb-6">💼 Was ich mache</h3>
+                        <h3 class="text-xl font-semibold text-accent mb-6">�� Was ich mache</h3>
                         <p class="text-light/80">
                             Ich erstelle benutzerfreundliche, reaktionsschnelle Websites und Anwendungen, die nicht nur gut aussehen, sondern auch nahtlos funktionieren. Meine Tools der Wahl sind Tailwind CSS, moderne JavaScript-Frameworks und alles, was Innovation schreit.
                         </p>
